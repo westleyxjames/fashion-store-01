@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details - Lunaris Shop</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/theme.css">
+    <link rel="stylesheet" href="css/product.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header id="main-header"></header>
+
+    <main class="product-page">
+        <div class="container">
+            <!-- Breadcrumb -->
+            <nav class="breadcrumb">
+                <a href="index.html">Home</a>
+                <span>/</span>
+                <a href="shop.html">Shop</a>
+                <span>/</span>
+                <span id="breadcrumb-product">Product</span>
+            </nav>
+
+            <!-- Product Details -->
+            <div class="product-layout">
+                <!-- Images -->
+                <div class="product-images">
+                    <div class="main-image">
+                        <img id="main-product-image" src="" alt="" class="product-main-img">
+                    </div>
+                    <div id="image-thumbnails" class="image-thumbnails"></div>
+                </div>
+
+                <!-- Product Info -->
+                <div class="product-info-section">
+                    <h1 id="product-name" class="product-title"></h1>
+                    
+                    <div class="product-rating">
+                        <div id="product-stars" class="star-rating"></div>
+                        <span id="product-rating-text" class="rating-text"></span>
+                    </div>
+
+                    <div class="product-price-section">
+                        <span id="product-price" class="product-price-large"></span>
+                        <span class="currency">USD</span>
+                    </div>
+
+                    <p id="product-description" class="product-description-text"></p>
+
+                    <div class="stock-status">
+                        <svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                        <span>In Stock</span>
+                    </div>
+
+                    <!-- Quantity Selector -->
+                    <div class="quantity-section">
+                        <label class="quantity-label">Quantity</label>
+                        <div class="quantity-controls">
+                            <button class="qty-btn" onclick="decreaseQuantity()">
+                                <svg class="icon-sm" viewBox="0 0 24 24">
+                                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                                </svg>
+                            </button>
+                            <span id="quantity-value" class="qty-display">1</span>
+                            <button class="qty-btn" onclick="increaseQuantity()">
+                                <svg class="icon-sm" viewBox="0 0 24 24">
+                                    <line x1="12" y1="5" x2="12" y2="19"></line>
+                                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Action Buttons -->
+                    <div class="product-actions">
+                        <button class="btn btn-primary action-btn" onclick="addToCartFromProduct()">
+                            Add to Cart
+                        </button>
+                        <button class="btn btn-secondary action-btn" onclick="buyNow()">
+                            Buy Now
+                        </button>
+                    </div>
+
+                    <!-- Trust Badges -->
+                    <div class="trust-badges">
+                        <div class="trust-badge">
+                            <svg class="badge-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4"></path>
+                            </svg>
+                            <p>Free Shipping</p>
+                        </div>
+                        <div class="trust-badge">
+                            <svg class="badge-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path>
+                            </svg>
+                            <p>30-Day Returns</p>
+                        </div>
+                        <div class="trust-badge">
+                            <svg class="badge-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+                            </svg>
+                            <p>Secure Checkout</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product Details Tabs -->
+            <div class="product-details-section">
+                <div class="tabs-header">
+                    <button class="tab-btn active">Description</button>
+                </div>
+
+                <div class="tabs-content">
+                    <div id="benefits-section" class="details-grid"></div>
+                    <div id="specifications-section" class="details-grid"></div>
+                </div>
+
+                <div class="shipping-info-grid">
+                    <div class="info-card">
+                        <h3>
+                            <svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4"></path>
+                            </svg>
+                            Shipping Information
+                        </h3>
+                        <p>Free standard shipping on orders over $50. Delivery within 3-7 business days across the United States. Express shipping available at checkout.</p>
+                    </div>
+                    <div class="info-card">
+                        <h3>
+                            <svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path>
+                            </svg>
+                            Return Policy
+                        </h3>
+                        <p>30-day money-back guarantee. If you're not satisfied, return your item within 30 days for a full refund. See our <a href="return-policy.html">Return Policy</a> for details.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Customer Reviews -->
+            <div class="reviews-section">
+                <h2>Customer Reviews</h2>
+                <div class="reviews-list">
+                    <div class="review-item">
+                        <div class="review-header">
+                            <div class="star-rating">
+                                <svg class="star star-filled" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" fill="currentColor"></polygon></svg>
+                                <svg class="star star-filled" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" fill="currentColor"></polygon></svg>
+                                <svg class="star star-filled" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" fill="currentColor"></polygon></svg>
+                                <svg class="star star-filled" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" fill="currentColor"></polygon></svg>
+                                <svg class="star star-filled" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" fill="currentColor"></polygon></svg>
+                            </div>
+                            <span class="review-author">Jennifer M.</span>
+                            <span class="review-date">February 20, 2026</span>
+                        </div>
+                        <p class="review-text">Absolutely love this product! High quality and exactly as described. Would definitely purchase again.</p>
+                    </div>
+                    <div class="review-item">
+                        <div class="review-header">
+                            <div class="star-rating">
+                                <svg class="star star-filled" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" fill="currentColor"></polygon></svg>
+                                <svg class="star star-filled" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" fill="currentColor"></polygon></svg>
+                                <svg class="star star-filled" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" fill="currentColor"></polygon></svg>
+                                <svg class="star star-filled" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" fill="currentColor"></polygon></svg>
+                                <svg class="star star-filled" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" fill="currentColor"></polygon></svg>
+                            </div>
+                            <span class="review-author">David L.</span>
+                            <span class="review-date">February 18, 2026</span>
+                        </div>
+                        <p class="review-text">Great value for money. Fast shipping and excellent customer service. Highly recommend!</p>
+                    </div>
+                    <div class="review-item">
+                        <div class="review-header">
+                            <div class="star-rating">
+                                <svg class="star star-filled" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" fill="currentColor"></polygon></svg>
+                                <svg class="star star-filled" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" fill="currentColor"></polygon></svg>
+                                <svg class="star star-filled" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" fill="currentColor"></polygon></svg>
+                                <svg class="star star-filled" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" fill="currentColor"></polygon></svg>
+                                <svg class="star star-empty" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                            </div>
+                            <span class="review-author">Amanda K.</span>
+                            <span class="review-date">February 15, 2026</span>
+                        </div>
+                        <p class="review-text">Very satisfied with my purchase. Quality is excellent and fits perfectly. Would definitely recommend!</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Related Products -->
+            <div class="related-products-section">
+                <h2>You May Also Like</h2>
+                <div id="related-products" class="product-grid"></div>
+            </div>
+        </div>
+    </main>
+
+    <footer id="main-footer"></footer>
+
+    <div id="cookie-consent" class="cookie-consent hidden">
+        <div class="cookie-content">
+            <p class="cookie-text">We use cookies to enhance your experience. <a href="privacy-policy.html" class="cookie-link">Privacy Policy</a></p>
+            <div class="cookie-buttons">
+                <button class="btn btn-outline-sm" id="cookie-decline">Decline</button>
+                <button class="btn btn-primary-sm" id="cookie-accept">Accept</button>
+            </div>
+        </div>
+    </div>
+
+    <button id="scroll-to-top" class="scroll-to-top hidden">
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" class="scroll-icon">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"></path>
+        </svg>
+    </button>
+
+    <div id="toast-container" class="toast-container"></div>
+
+    <script src="js/data/products.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="js/components.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/product.js"></script>
+</body>
+</html>

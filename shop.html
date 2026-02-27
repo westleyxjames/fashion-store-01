@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Shop premium fashion products at Lunaris Shop">
+    <title>Shop - Lunaris Shop</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/theme.css">
+    <link rel="stylesheet" href="css/shop.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header id="main-header"></header>
+
+    <main class="shop-page">
+        <div class="container">
+            <div class="shop-header">
+                <h1 class="page-title">Shop All Products</h1>
+                <p class="page-subtitle">Showing <span id="product-count">0</span> of <span id="total-count">0</span> products</p>
+            </div>
+
+            <div class="shop-layout">
+                <!-- Filters Sidebar -->
+                <aside class="filters-sidebar">
+                    <div class="filter-card">
+                        <div class="filter-header">
+                            <svg class="icon" viewBox="0 0 24 24">
+                                <line x1="4" y1="21" x2="4" y2="14"></line>
+                                <line x1="4" y1="10" x2="4" y2="3"></line>
+                                <line x1="12" y1="21" x2="12" y2="12"></line>
+                                <line x1="12" y1="8" x2="12" y2="3"></line>
+                                <line x1="20" y1="21" x2="20" y2="16"></line>
+                                <line x1="20" y1="12" x2="20" y2="3"></line>
+                                <line x1="1" y1="14" x2="7" y2="14"></line>
+                                <line x1="9" y1="8" x2="15" y2="8"></line>
+                                <line x1="17" y1="16" x2="23" y2="16"></line>
+                            </svg>
+                            <h2>Filters</h2>
+                        </div>
+
+                        <!-- Category Filter -->
+                        <div class="filter-section">
+                            <h3>Category</h3>
+                            <div id="category-filters" class="filter-options"></div>
+                        </div>
+
+                        <!-- Price Filter -->
+                        <div class="filter-section">
+                            <h3>Price Range</h3>
+                            <div class="filter-options">
+                                <label class="filter-option">
+                                    <input type="radio" name="price" value="all" checked>
+                                    <span>All Prices</span>
+                                </label>
+                                <label class="filter-option">
+                                    <input type="radio" name="price" value="under50">
+                                    <span>Under $50</span>
+                                </label>
+                                <label class="filter-option">
+                                    <input type="radio" name="price" value="50to100">
+                                    <span>$50 - $100</span>
+                                </label>
+                                <label class="filter-option">
+                                    <input type="radio" name="price" value="over100">
+                                    <span>Over $100</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Sort By -->
+                        <div class="filter-section">
+                            <h3>Sort By</h3>
+                            <select id="sort-select" class="filter-select">
+                                <option value="featured">Featured</option>
+                                <option value="price-low">Price: Low to High</option>
+                                <option value="price-high">Price: High to Low</option>
+                                <option value="rating">Highest Rated</option>
+                            </select>
+                        </div>
+                    </div>
+                </aside>
+
+                <!-- Products Grid -->
+                <div class="products-main">
+                    <div id="products-grid" class="product-grid"></div>
+                    <div id="no-products" class="no-products hidden">
+                        <p>No products found matching your filters.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer id="main-footer"></footer>
+
+    <div id="cookie-consent" class="cookie-consent hidden">
+        <div class="cookie-content">
+            <p class="cookie-text">
+                We use cookies to enhance your experience. By continuing, you agree to our use of cookies.
+                <a href="privacy-policy.html" class="cookie-link">Privacy Policy</a>
+            </p>
+            <div class="cookie-buttons">
+                <button class="btn btn-outline-sm" id="cookie-decline">Decline</button>
+                <button class="btn btn-primary-sm" id="cookie-accept">Accept</button>
+            </div>
+        </div>
+    </div>
+
+    <button id="scroll-to-top" class="scroll-to-top hidden">
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" class="scroll-icon">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"></path>
+        </svg>
+    </button>
+
+    <div id="toast-container" class="toast-container"></div>
+
+    <script src="js/data/products.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="js/components.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/shop.js"></script>
+</body>
+</html>

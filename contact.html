@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contact Lunaris Shop - We're here to help">
+    <title>Contact Us - Lunaris Shop</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/theme.css">
+    <link rel="stylesheet" href="css/pages.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header id="main-header"></header>
+
+    <main class="page-content">
+        <div class="container">
+            <!-- Page Header -->
+            <div class="page-header">
+                <h1 class="page-title">Contact Us</h1>
+                <p class="page-subtitle">We'd love to hear from you</p>
+            </div>
+
+            <!-- Contact Layout -->
+            <div class="contact-layout">
+                <!-- Contact Form -->
+                <div class="contact-form-section">
+                    <div class="form-card">
+                        <h2>Send Us a Message</h2>
+                        <p class="form-description">Have a question or concern? Fill out the form below and we'll get back to you within 24 hours.</p>
+                        
+                        <form id="contact-form" class="contact-form">
+                            <div class="form-group">
+                                <label for="name">Full Name *</label>
+                                <input type="text" id="name" name="name" required class="form-input">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="email">Email Address *</label>
+                                <input type="email" id="email" name="email" required class="form-input">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="phone">Phone Number</label>
+                                <input type="tel" id="phone" name="phone" class="form-input">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="subject">Subject *</label>
+                                <select id="subject" name="subject" required class="form-input">
+                                    <option value="">Select a subject</option>
+                                    <option value="order">Order Inquiry</option>
+                                    <option value="product">Product Question</option>
+                                    <option value="return">Return/Exchange</option>
+                                    <option value="shipping">Shipping Question</option>
+                                    <option value="technical">Technical Issue</option>
+                                    <option value="feedback">Feedback</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="order-number">Order Number (if applicable)</label>
+                                <input type="text" id="order-number" name="order-number" class="form-input" placeholder="e.g., #LUN-12345">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="message">Message *</label>
+                                <textarea id="message" name="message" required class="form-textarea" rows="6" placeholder="Please describe your inquiry in detail..."></textarea>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary form-submit">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Contact Information -->
+                <div class="contact-info-section">
+                    <div class="info-card">
+                        <h3>Contact Information</h3>
+                        
+                        <div class="contact-method">
+                            <svg class="contact-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                            </svg>
+                            <div>
+                                <h4>Email Us</h4>
+                                <p><a href="mailto:help@lunarisshop.online">help@lunarisshop.online</a></p>
+                                <p class="text-small">For general inquiries</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-method">
+                            <svg class="contact-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path>
+                            </svg>
+                            <div>
+                                <h4>Returns</h4>
+                                <p><a href="mailto:return@lunarisshop.online">return@lunarisshop.online</a></p>
+                                <p class="text-small">For return requests</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-method">
+                            <svg class="contact-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                            <div>
+                                <h4>Business Hours</h4>
+                                <p>Monday - Friday: 9AM - 6PM EST</p>
+                                <p>Saturday - Sunday: 10AM - 4PM EST</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="info-card">
+                        <h3>Quick Links</h3>
+                        <ul class="quick-links">
+                            <li><a href="track-order.html">Track Your Order</a></li>
+                            <li><a href="faq.html">FAQ</a></li>
+                            <li><a href="shipping-policy.html">Shipping Policy</a></li>
+                            <li><a href="return-policy.html">Return Policy</a></li>
+                            <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="info-card">
+                        <h3>Response Time</h3>
+                        <p>We strive to respond to all inquiries within 24 hours during business days. For urgent matters, please mark your subject line as "URGENT".</p>
+                        <p class="text-small mt-2">During weekends and holidays, response times may be longer.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FAQ Quick Access -->
+            <div class="faq-quick-section">
+                <h2>Frequently Asked Questions</h2>
+                <p>Looking for quick answers? Check out our FAQ page for common questions.</p>
+                <div class="faq-grid">
+                    <div class="faq-quick-card">
+                        <h4>How do I track my order?</h4>
+                        <p>Visit our <a href="track-order.html">Track Order</a> page and enter your order number.</p>
+                    </div>
+                    <div class="faq-quick-card">
+                        <h4>What is your return policy?</h4>
+                        <p>We offer 30-day returns on most items. See our <a href="return-policy.html">Return Policy</a> for details.</p>
+                    </div>
+                    <div class="faq-quick-card">
+                        <h4>Do you offer free shipping?</h4>
+                        <p>Yes! Free shipping on orders over $50. Check our <a href="shipping-policy.html">Shipping Policy</a>.</p>
+                    </div>
+                    <div class="faq-quick-card">
+                        <h4>What payment methods do you accept?</h4>
+                        <p>We accept Visa, Mastercard, PayPal, Apple Pay, and Cash on Delivery (COD).</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer id="main-footer"></footer>
+
+    <div id="cookie-consent" class="cookie-consent hidden">
+        <div class="cookie-content">
+            <p class="cookie-text">
+                We use cookies to enhance your experience. By continuing, you agree to our use of cookies.
+                <a href="privacy-policy.html" class="cookie-link">Privacy Policy</a>
+            </p>
+            <div class="cookie-buttons">
+                <button class="btn btn-outline-sm" id="cookie-decline">Decline</button>
+                <button class="btn btn-primary-sm" id="cookie-accept">Accept</button>
+            </div>
+        </div>
+    </div>
+
+    <button id="scroll-to-top" class="scroll-to-top hidden">
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" class="scroll-icon">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"></path>
+        </svg>
+    </button>
+
+    <div id="toast-container" class="toast-container"></div>
+
+    <script src="js/data/products.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="js/components.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/contact.js"></script>
+</body>
+</html>
